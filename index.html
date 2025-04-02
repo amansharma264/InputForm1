@@ -44,12 +44,12 @@
 
         <!-- Leader Details -->
         <h3>Team Leader</h3>
-        <input type="text" id="leader_name" placeholder="Leader Name" required>
-        <input type="text" id="leader_usn" placeholder="Leader USN" required>
-        <input type="text" id="leader_mobile" placeholder="Mobile Number" required>
-        <input type="text" id="leader_college" placeholder="College Name" required>
-        <input type="number" id="leader_year" placeholder="Year of Study" required>
-        <input type="email" id="leader_email" placeholder="Email" required>
+        <input type="text" id="Name" placeholder="Leader Name" required>
+        <input type="text" id="USN" placeholder="Leader USN" required>
+        <input type="text" id="MobileNo" placeholder="Mobile Number" required>
+        <input type="text" id="CollegeName" placeholder="College Name" required>
+        <input type="number" id="YearOfStudy" placeholder="Year of Study" required>
+        <input type="email" id="Email" placeholder="Email" required>
 
         <!-- Team Members -->
         <h3>Team Members</h3>
@@ -106,12 +106,12 @@
         async function submitForm() {
             const team_name = document.getElementById("team_name").value.trim();
             
-            const leader_name = document.getElementById("leader_name").value.trim();
-            const leader_usn = document.getElementById("leader_usn").value.trim();
-            const leader_mobile = document.getElementById("leader_mobile").value.trim();
-            const leader_college = document.getElementById("leader_college").value.trim();
-            const leader_year = document.getElementById("leader_year").value;
-            const leader_email = document.getElementById("leader_email").value.trim();
+            const leader_name = document.getElementById("Name").value.trim();
+            const leader_usn = document.getElementById("USN").value.trim();
+            const leader_mobile = document.getElementById("MobileNo").value.trim();
+            const leader_college = document.getElementById("CollegeName").value.trim();
+            const leader_year = document.getElementById("YearOfStudy").value;
+            const leader_email = document.getElementById("Email").value.trim();
 
             const event_name = document.getElementById("event_name").value;
             const transaction_id = document.getElementById("transaction_id").value.trim();
@@ -145,12 +145,12 @@
                     "unique()",
                     {
                         team_name: team_name || "N/A",
-                        leader_name,
-                        leader_usn,
-                        leader_mobile,
-                        leader_college,
-                        leader_year: parseInt(leader_year),
-                        leader_email,
+                        Name,
+                        USN,
+                        MobileNo,
+                        CollegeName,
+                        YearOfStudy: parseInt(leader_year),
+                        Email,
                         event_name,
                         transaction_id,
                         payment_screenshot: fileId,

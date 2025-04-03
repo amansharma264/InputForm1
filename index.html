@@ -208,7 +208,7 @@
             </div>
             <div class="form-group">
                 <p style="color: rgb(255, 0, 0);">Payment screenshot</p>
-                <input type="file" id="payment_screenshot" accept="image/*"  required>
+                <input type="file" id="payment_screenshot" accept="image/*"  required onchange="validateFileSize(this)">
             </div>
         </div>
 
@@ -224,6 +224,16 @@
 
         const databases = new Appwrite.Databases(client);
         const storage = new Appwrite.Storage(client);
+
+        function validateFileSize(input) {
+            const file = input.files[0];
+            const maxSize = 1 * 1024 * 1024; // 1 MB in bytes
+
+            if (file.size > maxSize) {
+                alert("File size must be less than 1 MB.");
+                input.value = ""; // Clear the input
+            }
+        }
 
         async function submitForm() {
             const team_name = document.getElementById("team_name").value.trim();
